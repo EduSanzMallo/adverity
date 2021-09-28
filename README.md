@@ -37,7 +37,7 @@ Deliverable
 
 
 
-* Things to improve *
+**TO IMPROVE**
 - Include authentication
 - Tweak results with Optional<> to avoid null results
 - Error message enhacenments
