@@ -1,0 +1,9 @@
+import com.adverity.Campaign
+
+model {
+	Campaign campaign
+}
+
+json {
+	name campaign.name
+}

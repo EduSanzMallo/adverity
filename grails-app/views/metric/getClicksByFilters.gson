@@ -1,0 +1,9 @@
+import com.adverity.Metric
+
+model {
+    ArrayList<Metric> clicks
+}
+
+json {
+    clicks g.render(clicks)
+}

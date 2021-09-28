@@ -1,0 +1,14 @@
+import com.adverity.Metric
+
+model {
+    ArrayList<Metric> metrics
+    ArrayList<String> includes
+}
+
+json {
+    if (includes) {
+        metrics g.render(metrics, [includes: includes, deep: true])
+    } else {
+        metrics g.render(metrics)
+    }
+}

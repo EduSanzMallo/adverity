@@ -1,0 +1,9 @@
+import com.adverity.Metric
+
+model {
+    ArrayList<Metric> impressions
+}
+
+json {
+    impressions g.render(impressions)
+}

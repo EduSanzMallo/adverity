@@ -1,0 +1,9 @@
+import com.adverity.Metric
+
+model {
+    ArrayList<Metric> crt
+}
+
+json {
+    crt g.render(crt)
+}

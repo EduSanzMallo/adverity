@@ -1,0 +1,6 @@
+import com.adverity.Metric
+
+model {
+    Metric metric
+}
+json tmpl.metric(metric)

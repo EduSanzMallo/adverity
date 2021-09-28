@@ -1,0 +1,7 @@
+import com.adverity.Campaign
+
+model {
+	Campaign campaign
+}
+
+json tmpl.campaign(campaign)

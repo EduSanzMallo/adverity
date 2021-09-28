@@ -1,0 +1,17 @@
+import com.adverity.Metric
+
+model {
+    Metric metric
+}
+json {
+    datasource {
+        name metric.datasource.name
+    }
+    campaign {
+        name metric.campaign.name
+    }
+    actionDate metric.actionDate
+    clicks metric.clicks
+    impressions metric.impressions
+    crt metric.crt
+}
