@@ -34,3 +34,12 @@ Feel free to
 Deliverable
 - Publish your solution on GitHub
 - Deploy it somewhere so that the API can be publicly queried from
+
+
+
+* Things to improve *
+- Include authentication
+- Tweak results with Optional<> to avoid null results
+- Error message enhacenments
+- Consult registration
+- Install Jaeger plugin
