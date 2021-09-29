@@ -74,5 +74,7 @@ Deliverable
 Needed to create a file called "adverity-development-config.properties" in /etc/adverity/ with the following content:
 
 ADVERITY_JDBC_CONNECTION_STRING='jdbc:mysql://127.0.0.1:3306/adverity?autoreconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&useUnicode=yes&characterEncoding=UTF8'
+
 ADVERITY_JDBC_CONNECTION_USER='XXX'
+
 ADVERITY_JDBC_CONNECTION_PASSWORD='XXX'
