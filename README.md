@@ -43,3 +43,28 @@ Deliverable
 - Error message enhacenments
 - Consult registration
 - Install Jaeger plugin
+
+
+**HOW TO CONSUME API (examples)**
+- Clicks
+  1. filters: both datasource, campaign, start and end are optional
+
+.../metrics/getClicksByFilters?datasource=Google%20Ads&campaign=Remarketing&start=01-09-2019&end=30-09-2019
+
+- CRT
+  1. filters: both datasource, campaign, start and end are optional
+
+.../metrics/getCrtByFilters?datasource=Google%20Ads&campaign=Remarketing&start=01-09-2019&end=30-09-2019
+
+- Impressions
+  1. filters: both datasource, campaign, actionDate are optional
+
+.../metrics/getImpressionsByFilters?datasource=Google%20Ads&campaign=Remarketing&actionDate=19-09-2019
+
+- Metrics
+  1. filters: both datasource, campaign, start and end are optional
+  2. projections: fields to include
+  3. groupBy: fields to group by
+
+.../metrics/getMetricsByFilters?datasource=Google%20Ads&campaign=Remarketing&start=01-09-2019&end=30-09-2019&projections=datasource,campaign,actionDate,clicks&groupBy=campaign
+
