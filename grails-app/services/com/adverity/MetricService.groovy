@@ -1,9 +1,5 @@
 package com.adverity
 
-import com.adverity.MetricController.ClickFiltersCommand
-import com.adverity.MetricController.CrtFiltersCommand
-import com.adverity.MetricController.ImpressionFiltersCommand
-import com.adverity.MetricController.MetricFiltersCommand
 import grails.gorm.transactions.Transactional
 
 @Transactional(readOnly = true)

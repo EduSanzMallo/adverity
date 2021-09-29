@@ -29,7 +29,7 @@ class Metric {
     }
 
     static namedQueries = {
-        getClicksByFilters { MetricController.ClickFiltersCommand filters ->
+        getClicksByFilters { ClickFiltersCommand filters ->
             projections {
                 sum('clicks')
             }
@@ -48,7 +48,7 @@ class Metric {
             }
         }
 
-        getCrtByFilters { MetricController.CrtFiltersCommand filters ->
+        getCrtByFilters { CrtFiltersCommand filters ->
             projections {
                 sum('crt')
             }
@@ -67,7 +67,7 @@ class Metric {
             }
         }
 
-        getImpressionsByFilters { MetricController.ImpressionFiltersCommand filters ->
+        getImpressionsByFilters { ImpressionFiltersCommand filters ->
             projections {
                 sum('impressions')
             }
@@ -86,7 +86,7 @@ class Metric {
             }
         }
 
-        getMetricsByFilters { MetricController.MetricFiltersCommand filters ->
+        getMetricsByFilters { MetricFiltersCommand filters ->
             if (filters.datasource) {
                 datasource {
                     eq("name", filters.datasource)

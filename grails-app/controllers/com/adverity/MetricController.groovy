@@ -23,49 +23,11 @@ class MetricController extends RestfulController {
         }
     }
 
-    class ClickFiltersCommand implements grails.validation.Validateable {
-
-        String datasource
-        String campaign
-
-        @BindingFormat("dd-MM-yyyy")
-        Date start
-
-        @BindingFormat("dd-MM-yyyy")
-        Date end
-
-        static constraints = {
-            datasource nullable: true
-            campaign nullable: true
-            start nullable: true
-            end nullable: true
-        }
-    }
-
     def getCrtByFilters(CrtFiltersCommand filters) {
         if (filters.validate()) {
             [crt: metricService.getCrtByFilters(filters)]
         } else {
             errorHandling(filters)
-        }
-    }
-
-    class CrtFiltersCommand implements grails.validation.Validateable {
-
-        String datasource
-        String campaign
-
-        @BindingFormat("dd-MM-yyyy")
-        Date start
-
-        @BindingFormat("dd-MM-yyyy")
-        Date end
-
-        static constraints = {
-            datasource nullable: true
-            campaign nullable: true
-            start nullable: true
-            end nullable: true
         }
     }
 
@@ -77,50 +39,11 @@ class MetricController extends RestfulController {
         }
     }
 
-    class ImpressionFiltersCommand implements grails.validation.Validateable {
-
-        String datasource
-        String campaign
-
-        @BindingFormat("dd-MM-yyyy")
-        Date actionDate
-
-        static constraints = {
-            datasource nullable: true
-            campaign nullable: true
-            actionDate nullable: true
-        }
-    }
-
     def getMetricsByFilters(MetricFiltersCommand filters) {
         if (filters.validate()) {
             [metrics: metricService.getMetricsByFilters(filters), includes: filters?.projections?.tokenize(',')]
         } else {
             errorHandling(filters)
-        }
-    }
-
-    class MetricFiltersCommand implements grails.validation.Validateable {
-
-        String datasource
-        String campaign
-
-        @BindingFormat("dd-MM-yyyy")
-        Date start
-
-        @BindingFormat("dd-MM-yyyy")
-        Date end
-
-        String projections
-        String groupBy
-
-        static constraints = {
-            datasource nullable: true
-            campaign nullable: true
-            start nullable: true
-            end nullable: true
-            projections nullable: true
-            groupBy nullable: true
         }
     }
 
@@ -136,7 +59,7 @@ class MetricController extends RestfulController {
                 throw new InvalidFormatException("Invalid format for ${field} field in the request")
             }
         } else {
-            if (field) {
+            if (field) { // Just in case you want to set any mandatory field in the request
                 throw new MissingParameterException("Missing ${field} field in the request")
             }
         }
@@ -148,5 +71,82 @@ class MetricController extends RestfulController {
 
     def handleInvalidFormatException(InvalidFormatException e) {
         render(status: 500, message: e.message)
+    }
+}
+
+class ClickFiltersCommand implements grails.validation.Validateable {
+
+    String datasource
+    String campaign
+
+    @BindingFormat("dd-MM-yyyy")
+    Date start
+
+    @BindingFormat("dd-MM-yyyy")
+    Date end
+
+    static constraints = {
+        datasource nullable: true
+        campaign nullable: true
+        start nullable: true
+        end nullable: true
+    }
+}
+
+class CrtFiltersCommand implements grails.validation.Validateable {
+
+    String datasource
+    String campaign
+
+    @BindingFormat("dd-MM-yyyy")
+    Date start
+
+    @BindingFormat("dd-MM-yyyy")
+    Date end
+
+    static constraints = {
+        datasource nullable: true
+        campaign nullable: true
+        start nullable: true
+        end nullable: true
+    }
+}
+
+class ImpressionFiltersCommand implements grails.validation.Validateable {
+
+    String datasource
+    String campaign
+
+    @BindingFormat("dd-MM-yyyy")
+    Date actionDate
+
+    static constraints = {
+        datasource nullable: true
+        campaign nullable: true
+        actionDate nullable: true
+    }
+}
+
+class MetricFiltersCommand implements grails.validation.Validateable {
+
+    String datasource
+    String campaign
+
+    @BindingFormat("dd-MM-yyyy")
+    Date start
+
+    @BindingFormat("dd-MM-yyyy")
+    Date end
+
+    String projections
+    String groupBy
+
+    static constraints = {
+        datasource nullable: true
+        campaign nullable: true
+        start nullable: true
+        end nullable: true
+        projections nullable: true
+        groupBy nullable: true
     }
 }
