@@ -66,11 +66,11 @@ class MetricController extends RestfulController {
     }
 
     def handleMissingParameterException(MissingParameterException e) {
-        render status: 500, message: e.message
+        render view: '../error', model: [message: e.message]
     }
 
     def handleInvalidFormatException(InvalidFormatException e) {
-        render(status: 500, message: e.message)
+        render view: '../error', model: [message: e.message]
     }
 }
 

@@ -73,6 +73,6 @@ class MetricControllerFuncSpec extends Specification {
         then:
             !response
             HttpClientResponseException e = thrown()
-            //e.message == 'Invalid format for start field in the request'
+            e.message == 'Invalid format for start field in the request'
     }
 }
