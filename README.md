@@ -69,7 +69,8 @@ Deliverable
 .../metrics/getMetricsByFilters?datasource=Google%20Ads&campaign=Remarketing&start=01-09-2019&end=30-09-2019&projections=datasource,campaign,actionDate,clicks&groupBy=campaign
 
 
-*NOTICE*
+*NOTE*
+
 Needed to create a file called "adverity-development-config.properties" in /etc/adverity/ with the following content:
 
 ADVERITY_JDBC_CONNECTION_STRING='jdbc:mysql://127.0.0.1:3306/adverity?autoreconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&useUnicode=yes&characterEncoding=UTF8'
