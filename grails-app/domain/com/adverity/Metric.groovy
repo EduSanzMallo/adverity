@@ -24,7 +24,6 @@ class Metric {
     }
 
     static mapping = {
-        autoTimestamp false
         crt formula: '(CLICKS / IMPRESSIONS) * 100'
     }
 

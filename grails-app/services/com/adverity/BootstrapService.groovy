@@ -38,34 +38,4 @@ class BootstrapService {
             }
         }
     }
-
-    void createDatasources() {
-        if (Datasource.count() == 0) {
-            new Datasource(name: 'DS1').save()
-            new Datasource(name: 'DS2').save()
-            new Datasource(name: 'DS3').save()
-            new Datasource(name: 'DS4').save()
-            new Datasource(name: 'DS5').save()
-        }
-    }
-
-    void createCampaigns() {
-        if (Campaign.count() == 0) {
-            new Campaign(name: 'C1').save()
-            new Campaign(name: 'C2').save()
-            new Campaign(name: 'C3').save()
-            new Campaign(name: 'C4').save()
-            new Campaign(name: 'C5').save()
-        }
-    }
-
-    void createMetrics() {
-        if (Metric.count() == 0) {
-            new Metric(datasource: Datasource.findByName('DS1'), campaign: Campaign.findByName('C1'), actionDate: new Date(), clicks: 123, impressions: 123000).save(failOnError: true)
-            new Metric(datasource: Datasource.findByName('DS2'), campaign: Campaign.findByName('C2'), actionDate: new Date(), clicks: 90, impressions: 90000).save()
-            new Metric(datasource: Datasource.findByName('DS3'), campaign: Campaign.findByName('C3'), actionDate: new Date(), clicks: 45, impressions: 45000).save()
-            new Metric(datasource: Datasource.findByName('DS4'), campaign: Campaign.findByName('C4'), actionDate: new Date(), clicks: 19, impressions: 19000).save()
-            new Metric(datasource: Datasource.findByName('DS5'), campaign: Campaign.findByName('C5'), actionDate: new Date(), clicks: 76, impressions: 76000).save()
-        }
-    }
 }

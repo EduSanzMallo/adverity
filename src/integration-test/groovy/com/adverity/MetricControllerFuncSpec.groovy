@@ -1,6 +1,5 @@
 package com.adverity
 
-import com.adverity.exception.InvalidFormatException
 import grails.testing.spock.OnceBefore
 import io.micronaut.http.HttpRequest
 import io.micronaut.http.HttpStatus

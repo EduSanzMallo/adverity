@@ -6,9 +6,6 @@ class BootStrap {
 
     def init = { servletContext ->
         bootstrapService.populateFromCsvFile()
-        //bootstrapService.createDatasources()
-        //bootstrapService.createCampaigns()
-        //bootstrapService.createMetrics()
     }
     def destroy = {
     }
