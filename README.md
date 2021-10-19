@@ -39,7 +39,7 @@ Deliverable
 
 **TO IMPROVE**
 - Include authentication
-- Tweak results with Optional<> to avoid null results
+- Tweak returning results using RxJava2 objects (Single, Maybe, Optional or Flowable)
 - Error message enhacenments
 - Consul registration
 - Install Swagger plugin
