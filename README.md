@@ -41,8 +41,8 @@ Deliverable
 - Include authentication
 - Tweak results with Optional<> to avoid null results
 - Error message enhacenments
-- Consult registration
-- Install Jaeger plugin
+- Consul registration
+- Install Swagger plugin
 
 
 **HOW TO CONSUME API (examples)**
